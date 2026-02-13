@@ -1,6 +1,6 @@
 # SWE7302-OmniStore
 MCS AI Advance Software Developmnet Project
-Omni-Store Legacy System (Initial Setup)
+Omni-Store Legacy System 
 
 This repository will contain the development and refactoring of a legacy
 Omni-Store system as part of SWE7302 Advanced Software Development.
