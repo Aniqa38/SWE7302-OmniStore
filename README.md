@@ -49,4 +49,8 @@ The goal is to improve code structure by applying:
 - Structural Pattern (Decorator)
 
 The legacy system will remain unchanged in the main branch.
+First Refactor = Payment → Factory Pattern
+
+One pattern at a time.
+One commit per pattern.
 
