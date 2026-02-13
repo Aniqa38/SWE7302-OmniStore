@@ -37,3 +37,16 @@ The aim of this project is to refactor the legacy Omni-Store system using
 object-oriented principles and appropriate design patterns (Creational,
 Structural, and Behavioral) in order to improve maintainability,
 flexibility, and code quality.
+
+13/02/2026
+Refactoring Phase
+
+This branch begins the refactoring of the legacy OmniStore system.
+The goal is to improve code structure by applying:
+
+- Creational Pattern (Factory)
+- Behavioral Pattern (Strategy)
+- Structural Pattern (Decorator)
+
+The legacy system will remain unchanged in the main branch.
+
