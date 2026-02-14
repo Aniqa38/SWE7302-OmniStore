@@ -1,16 +1,24 @@
 package refactored;
 
 import refactored.payment.*;
+import refactored.discount.*;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Payment payment1 = PaymentFactory.createPayment("CreditCard");
-        payment1.pay(1000);
+        int pricePerItem = 1000;
+        int quantity = 3;
+        int total = pricePerItem * quantity;
 
-        Payment payment2 = PaymentFactory.createPayment("PayPal");
-        payment2.pay(500);
+        // Strategy Pattern
+        DiscountStrategy discount = new BulkDiscount();
+        total = discount.applyDiscount(total);
+
+        // Factory Pattern
+        Payment payment = PaymentFactory.createPayment("CreditCard");
+        payment.pay(total);
     }
 }
+
 
