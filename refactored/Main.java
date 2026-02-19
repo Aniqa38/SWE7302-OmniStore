@@ -1,5 +1,8 @@
 package refactored;
 
+import refactored.database.DatabaseSetup;
+
+
 import refactored.payment.*;
 import refactored.discount.*;
 import refactored.order.*;
@@ -7,6 +10,9 @@ import refactored.order.*;
 public class Main {
 
     public static void main(String[] args) {
+
+        DatabaseSetup.createTable();
+
 
         int pricePerItem = 1000;
         int quantity = 3;
