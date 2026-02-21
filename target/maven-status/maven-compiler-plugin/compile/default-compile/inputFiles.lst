@@ -1,0 +1,14 @@
+C:\Oministore\src\main\java\refactored\database\DatabaseManager.java
+C:\Oministore\src\main\java\refactored\database\DatabaseSetup.java
+C:\Oministore\src\main\java\refactored\discount\BulkDiscount.java
+C:\Oministore\src\main\java\refactored\discount\DiscountStrategy.java
+C:\Oministore\src\main\java\refactored\discount\NoDiscount.java
+C:\Oministore\src\main\java\refactored\Main.java
+C:\Oministore\src\main\java\refactored\order\BasicOrder.java
+C:\Oministore\src\main\java\refactored\order\GiftWrapDecorator.java
+C:\Oministore\src\main\java\refactored\order\Order.java
+C:\Oministore\src\main\java\refactored\order\OrderDecorator.java
+C:\Oministore\src\main\java\refactored\payment\CreditCardPayment.java
+C:\Oministore\src\main\java\refactored\payment\Payment.java
+C:\Oministore\src\main\java\refactored\payment\PaymentFactory.java
+C:\Oministore\src\main\java\refactored\payment\PayPalPayment.java
