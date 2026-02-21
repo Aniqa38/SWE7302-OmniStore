@@ -37,3 +37,27 @@ The aim of this project is to refactor the legacy Omni-Store system using
 object-oriented principles and appropriate design patterns (Creational,
 Structural, and Behavioral) in order to improve maintainability,
 flexibility, and code quality.
+This is GUI, I have created using Java FX: 
+![GUI](image.png)
+To run GUI : ( stay in root folder)
+mvn clean javafx:run
+shows pop up as well: ![pop up message](image-1.png)
+Stores data in database: ![sqlite dtabase](image-2.png)
+This project : 
+Uses JavaFX
+
+Processes order (Strategy + Decorator + Factory)
+
+Inserts into database
+
+Shows result in GUI
+
+Shows success popup
+
+Looks neat for coursework
+
+
+FOR RUNNING THE PROJECT : (stay in root folder) RUN FOLLOWING COMMAND 
+
+
+mvn clean javafx:run
