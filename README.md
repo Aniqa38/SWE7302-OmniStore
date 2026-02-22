@@ -1,4 +1,4 @@
- ** MCS AI, University of Greater Manchester **
+ **MCS AI, University of Greater Manchester**
 ** SWE7302-OmniStore ( Desktop application using JAVA)**
 **1. Omni-Store Legacy System (Initial Setup) **
 
