@@ -1,77 +1,115 @@
- **MCS AI, University of Greater Manchester**
- 
-**SWE7302-OmniStore ( Desktop application using JAVA)**
-**1. Omni-Store Legacy System (Initial Setup)**
+# SWE7302 – OmniStore
 
-This repository will contain the development and refactoring of a legacy
-Omni-Store system as part of SWE7302 Advanced Software Development.
+**MCS AI, University of Greater Manchester**  
+Desktop Application using **Java & JavaFX**
 
-The project will demonstrate object-oriented principles and the application
-of creational, structural, and behavioral design patterns.
-To start with: 
+---
 
-**2. Problem Overview**
-   
-Omni-Store is a simple retail system that allows customers to place orders
-for products, make payments using different payment methods, and update
-inventory levels accordingly. The system supports basic order processing,
-pricing, and inventory management.
+## 1. Project Overview
 
-**3. Legacy System Description**
-   
-The initial version of Omni-Store is intentionally designed as a legacy
-system. It follows a monolithic structure where a single class is
-responsible for handling most of the system’s functionality, including
-order processing, payment handling, and inventory updates.
+This repository contains the development and refactoring of the **OmniStore Legacy System** as part of the *SWE7302 – Advanced Software Development* module.
 
-**4. This design results in:**
-   
-- Tight coupling between components
-- Long conditional (if/else) statements for business logic
-- Poor separation of concerns
-- Difficulty in extending the system with new features
+The project focuses on applying **object-oriented principles** and implementing **Creational, Structural, and Behavioral design patterns** to transform a monolithic legacy system into a maintainable, extensible, and well-structured application.
 
-These issues make the system hard to maintain and violate several object-
-oriented design principles.
+---
 
-**5. Project Aim**
-   
-The aim of this project is to refactor the legacy Omni-Store system using
-object-oriented principles and appropriate design patterns (Creational,
-Structural, and Behavioral) in order to improve maintainability,
-flexibility, and code quality.
+## 2. Problem Overview
 
+OmniStore is a simple retail management system that allows customers to:
 
- **6. This is GUI, I have created using Java FX:**
-![GUI](image.png)
-To run GUI : ( stay in root folder)
-Shows pop up as well: ![pop up message](image-1.png)
-Stores data in database: ![sqlite dtabase](image-2.png)
+- Place product orders  
+- Make payments using different payment methods  
+- Apply discounts  
+- Update inventory levels  
 
-**7.This project:**
-Uses JavaFX
+The system supports basic order processing, pricing, and inventory management.
 
-Processes order (Strategy + Decorator + Factory)
+---
 
-Inserts into database
+## 3. Legacy System Description
 
-Shows result in GUI
+The initial version of OmniStore was intentionally designed as a **legacy monolithic system**.
 
-Shows success popup
+Characteristics of the legacy design:
 
-**8. IMPROVED GUI:**
-   
-![GUI where cutomer can select options](image-3.png)
+- A single class handles most of the system functionality  
+- Order processing, payment handling, and inventory updates are tightly coupled  
+- Business logic relies heavily on long `if/else` conditional statements  
 
-User can choose Discount (Strategy)
+### Issues Identified
 
-User can choose Payment (Factory)
+- Tight coupling between components  
+- Poor separation of concerns  
+- Difficult to extend with new features  
+- Violates key object-oriented design principles  
+- Hard to maintain and scale  
 
-User can optionally add Gift Wrap (Decorator)
+---
 
-Order is stored in database
+## 4. Project Aim
 
-UI looks clean and user friendly
+The aim of this project is to refactor the legacy system using:
+
+- Object-Oriented Design Principles  
+- Creational Design Patterns  
+- Structural Design Patterns  
+- Behavioral Design Patterns  
+
+The goal is to improve:
+
+- Maintainability  
+- Flexibility  
+- Code readability  
+- Scalability  
+- Overall software quality  
+
+---
+
+## 5. Design Patterns Implemented
+
+This project applies the following patterns:
+
+### Strategy Pattern
+Used to handle different discount strategies dynamically.
+
+### Factory Pattern
+Used to create different payment method objects without exposing instantiation logic.
+
+### Decorator Pattern
+Used to add optional features such as gift wrapping without modifying existing classes.
+
+---
+
+## 6. GUI Implementation (JavaFX)
+
+The system includes a graphical user interface built using **JavaFX**.
+
+### Features:
+
+- Customer-friendly order interface  
+- Option to select discount (Strategy Pattern)  
+- Option to select payment method (Factory Pattern)  
+- Optional gift wrap feature (Decorator Pattern)  
+- Order confirmation popup messages  
+- Data stored in SQLite database  
+- Clean and user-friendly interface  
+
+---
+
+## 7. Database
+
+- SQLite database integration  
+- Orders are stored persistently  
+- Database operations handled separately from UI logic  
+
+---
+
+## 8. Running the Project
+
+Make sure you are in the **root project folder**, then run:
+
+```bash
+mvn clean javafx:run
 
 
 
@@ -79,3 +117,26 @@ UI looks clean and user friendly
 
 
 mvn clean javafx:run
+
+
+## 9. Technologies Used
+
+The project is built using the following technologies:
+
+- **Java** – Core programming language used for application development  
+- **JavaFX** – Framework for building the graphical user interface  
+- **Maven** – Dependency management and build automation tool  
+- **SQLite** – Lightweight relational database for persistent data storage  
+
+---
+
+## 10. Learning Outcomes
+
+This project demonstrates the following key software engineering concepts:
+
+- Refactoring and improving a legacy monolithic system  
+- Applying core object-oriented design principles  
+- Implementing Creational, Structural, and Behavioral design patterns  
+- Separating concerns between presentation layer, business logic, and data access layer  
+- Designing and developing desktop applications using JavaFX  
+- Integrating database functionality within a structured application architecture  
