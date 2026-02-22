@@ -104,41 +104,24 @@ The system includes a graphical user interface built using **JavaFX**.
 
 ---
 
+
 ## 8. Running the Project
 
-Make sure you are in the **root project folder**, then run:
-
-```bash
-mvn clean javafx:run
-
-
-
-***RUNNING THE PROJECT: (stay in root folder) RUN FOLLOWING COMMAND***
-
-
-mvn clean javafx:run
-
-
----
+- Make sure you are in the root project folder
+- Run the following command:
+- mvn clean javafx:run
 
 ## 9. Technologies Used
 
-The project is built using the following technologies:
-
-- **Java** – Core programming language used for application development
-- **JavaFX** – Framework for building the graphical user interface
-- **Maven** – Dependency management and build automation tool
-- **SQLite** – Lightweight relational database for persistent data storage
-
----
+- Java
+- JavaFX
+- Maven
+- SQLite
 
 ## 10. Learning Outcomes
 
-This project demonstrates the following key software engineering concepts:
-
-- Refactoring and improving a legacy monolithic system
-- Applying object-oriented design principles
+- Refactoring legacy systems
+- Applying object-oriented principles
 - Implementing Creational, Structural, and Behavioral design patterns
-- Separating concerns between presentation layer, business logic, and data layer
-- Designing and developing desktop applications using JavaFX
-- Integrating database functionality within a structured application architecture
+- Separating concerns between UI, business logic, and data layer
+- Building desktop applications using JavaFX
