@@ -113,20 +113,22 @@ mvn clean javafx:run
 
 
 
-***FOR RUNNING THE PROJECT: (stay in root folder) RUN FOLLOWING COMMAND***
+***RUNNING THE PROJECT: (stay in root folder) RUN FOLLOWING COMMAND***
 
 
 mvn clean javafx:run
 
 
+---
+
 ## 9. Technologies Used
 
 The project is built using the following technologies:
 
-- **Java** – Core programming language used for application development  
-- **JavaFX** – Framework for building the graphical user interface  
-- **Maven** – Dependency management and build automation tool  
-- **SQLite** – Lightweight relational database for persistent data storage  
+- **Java** – Core programming language used for application development
+- **JavaFX** – Framework for building the graphical user interface
+- **Maven** – Dependency management and build automation tool
+- **SQLite** – Lightweight relational database for persistent data storage
 
 ---
 
@@ -134,9 +136,9 @@ The project is built using the following technologies:
 
 This project demonstrates the following key software engineering concepts:
 
-- Refactoring and improving a legacy monolithic system  
-- Applying core object-oriented design principles  
-- Implementing Creational, Structural, and Behavioral design patterns  
-- Separating concerns between presentation layer, business logic, and data access layer  
-- Designing and developing desktop applications using JavaFX  
-- Integrating database functionality within a structured application architecture  
+- Refactoring and improving a legacy monolithic system
+- Applying object-oriented design principles
+- Implementing Creational, Structural, and Behavioral design patterns
+- Separating concerns between presentation layer, business logic, and data layer
+- Designing and developing desktop applications using JavaFX
+- Integrating database functionality within a structured application architecture
