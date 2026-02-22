@@ -54,7 +54,19 @@ Shows result in GUI
 
 Shows success popup
 
-Looks neat for coursework
+IMPROVED GUI: 
+![GUI where cutomer can select options](image-3.png)
+
+User can choose Discount (Strategy)
+
+User can choose Payment (Factory)
+
+User can optionally add Gift Wrap (Decorator)
+
+Order is stored in database
+
+UI looks clean and academic
+
 
 
 FOR RUNNING THE PROJECT : (stay in root folder) RUN FOLLOWING COMMAND 
