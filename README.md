@@ -129,7 +129,7 @@ The system includes a graphical user interface built using **JavaFX**.
 
 - Make sure you are in the root project folder
 - Run the following command:
-- mvn clean javafx:run
+ mvn clean javafx:run
 
 ## 10. Technologies Used
 
