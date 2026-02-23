@@ -104,21 +104,41 @@ The system includes a graphical user interface built using **JavaFX**.
 
 ---
 
+---
 
-## 8. Running the Project
+## 8. UML Modelling
+
+- UML diagrams were created to support architectural analysis and demonstrate the transformation from the legacy system to the refactored design.
+
+### Legacy System UML
+
+- Class Diagram – Shows the monolithic structure where all responsibilities are centralised within a single OmniStoreManager class.
+- Sequence Diagram – Demonstrates how order processing, discount calculation, payment handling, and notification logic are executed internally within one class using conditional branching.
+
+- These diagrams highlight tight coupling, lack of abstraction, and poor separation of concerns in the original implementation.
+
+### Refactored System UML
+
+- Class Diagram – Shows modular package organisation (discount, order, payment, database) and the introduction of interfaces and abstraction.
+- Sequence Diagram – Illustrates runtime collaboration between Strategy, Decorator, Factory, and Database components.
+
+- The UML comparison clearly visualises the architectural evolution from a monolithic system to a modular, loosely coupled, pattern-driven design.
+
+
+## 9. Running the Project
 
 - Make sure you are in the root project folder
 - Run the following command:
 - mvn clean javafx:run
 
-## 9. Technologies Used
+## 10. Technologies Used
 
 - Java
 - JavaFX
 - Maven
 - SQLite
 
-## 10. Learning Outcomes
+## 11. Learning Outcomes
 
 - Refactoring legacy systems
 - Applying object-oriented principles
