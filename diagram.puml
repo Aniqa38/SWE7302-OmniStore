@@ -1,0 +1,92 @@
+skinparam dpi 300
+scale 1.5
+
+@startuml
+skinparam dpi 300
+skinparam classAttributeIconSize 0
+
+package "database" {
+
+class DatabaseManager {
+    - URL : String
+    + connect() : Connection
+    + insertOrder(description : String, cost : int, paymentType : String)
+}
+
+class DatabaseSetup {
+    + createTable()
+}
+
+DatabaseSetup --> DatabaseManager : uses
+}
+
+package "discount" {
+
+interface DiscountStrategy {
+    + applyDiscount(total : int) : int
+}
+
+class BulkDiscount {
+    + applyDiscount(total : int) : int
+}
+
+class NoDiscount {
+    + applyDiscount(total : int) : int
+}
+
+DiscountStrategy <|.. BulkDiscount
+DiscountStrategy <|.. NoDiscount
+}
+
+package "order" {
+
+interface Order {
+    + getCost() : int
+    + getDescription() : String
+}
+
+class BasicOrder {
+    - baseCost : int
+    + getCost() : int
+    + getDescription() : String
+}
+
+abstract class OrderDecorator {
+    # decoratedOrder : Order
+}
+
+class GiftWrapDecorator {
+    + getCost() : int
+    + getDescription() : String
+}
+
+Order <|.. BasicOrder
+Order <|-- OrderDecorator
+OrderDecorator <|-- GiftWrapDecorator
+OrderDecorator --> Order : wraps
+}
+
+package "payment" {
+
+interface Payment {
+    + pay(amount : int)
+}
+
+class CreditCardPayment {
+    + pay(amount : int)
+}
+
+class PayPalPayment {
+    + pay(amount : int)
+}
+
+class PaymentFactory {
+    + createPayment(type : String) : Payment
+}
+
+Payment <|.. CreditCardPayment
+Payment <|.. PayPalPayment
+PaymentFactory --> Payment : creates
+}
+
+@enduml
