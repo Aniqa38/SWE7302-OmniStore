@@ -73,3 +73,7 @@ FOR RUNNING THE PROJECT : (stay in root folder) RUN FOLLOWING COMMAND
 
 
 mvn clean javafx:run
+
+For running Unit test follwing command , stay in rood folder where POM.XML firl is 
+
+mvn test
