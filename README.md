@@ -123,22 +123,36 @@ The system includes a graphical user interface built using **JavaFX**.
 - Sequence Diagram – Illustrates runtime collaboration between Strategy, Decorator, Factory, and Database components.
 
 - The UML comparison clearly visualises the architectural evolution from a monolithic system to a modular, loosely coupled, pattern-driven design.
+## 9. Unit Testing
 
+The project includes **JUnit 5 unit testing** to validate core business logic independently of the GUI and database layers.
 
-## 9. Running the Project
+### Testing Focus
+
+- The `BulkDiscount` strategy implementation is tested.
+- Boundary conditions are verified:
+  - Discount applied when total > 2000
+  - No discount applied when total ≤ 2000
+
+### Why This Matters
+
+The use of the Strategy pattern enables independent testing of discount logic due to interface-based abstraction and loose coupling.  
+This demonstrates improved testability and modularity in the refactored architecture.
+
+## 10. Running the Project
 
 - Make sure you are in the root project folder
 - Run the following command:
  mvn clean javafx:run
 
-## 10. Technologies Used
+## 11. Technologies Used
 
 - Java
 - JavaFX
 - Maven
 - SQLite
 
-## 11. Learning Outcomes
+## 12. Learning Outcomes
 
 - Refactoring legacy systems
 - Applying object-oriented principles
