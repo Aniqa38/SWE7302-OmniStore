@@ -142,7 +142,7 @@ This demonstrates improved testability and modularity in the refactored architec
 ## 10. Running the Project
 
 - In the root project folder where pom.xml is 
-  Run the following command:
+  Run this command:
  mvn clean javafx:run
 
 ## 11. Technologies Used
