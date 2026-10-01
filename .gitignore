@@ -1,0 +1,10 @@
+# Build output
+target/
+*.class
+
+# Local database created when the app runs
+*.db
+
+# Editor settings
+.vscode/
+.idea/
