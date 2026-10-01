@@ -1,161 +1,170 @@
-# SWE7302 – OmniStore
+# OmniStore: Refactoring a Legacy System with Design Patterns
 
-**MCS AI, University of Greater Manchester**  
-Desktop Application using **Java & JavaFX**
+A JavaFX desktop retail application that transforms a monolithic legacy system into a modular, maintainable design using object-oriented principles and the **Strategy**, **Factory** and **Decorator** design patterns.
 
----
+Developed for the *SWE7302 – Advanced Software Development* module, MSc Artificial Intelligence, University of Greater Manchester.
 
-## 1. Project Overview
+**Tech:** Java 21 · JavaFX · Maven · SQLite · JUnit 5
 
-This repository contains the development and refactoring of the **OmniStore Legacy System** as part of the *SWE7302 – Advanced Software Development* module.
-
-The project focuses on applying **object-oriented principles** and implementing **Creational, Structural, and Behavioral design patterns** to transform a monolithic legacy system into a maintainable, extensible, and well-structured application.
-
----
-
-## 2. Problem Overview
-
-OmniStore is a simple retail management system that allows customers to:
-
-- Place product orders  
-- Make payments using different payment methods  
-- Apply discounts  
-- Update inventory levels  
-
-The system supports basic order processing, pricing, and inventory management.
+| Order screen | Order saved |
+|---|---|
+| ![OmniStore order screen](docs/screenshots/order-screen.png) | ![Order saved confirmation](docs/screenshots/order-saved.png) |
 
 ---
 
-## 3. Legacy System Description
+## 1. Problem overview
 
-The initial version of OmniStore was intentionally designed as a **legacy monolithic system**.
+OmniStore is a simple retail management system that lets customers:
 
-Characteristics of the legacy design:
+- Place product orders
+- Pay using different payment methods
+- Apply discounts
+- Update inventory levels
 
-- A single class handles most of the system functionality  
-- Order processing, payment handling, and inventory updates are tightly coupled  
-- Business logic relies heavily on long `if/else` conditional statements  
-
-### Issues Identified
-
-- Tight coupling between components  
-- Poor separation of concerns  
-- Difficult to extend with new features  
-- Violates key object-oriented design principles  
-- Hard to maintain and scale  
+The system supports basic order processing, pricing and inventory management.
 
 ---
 
-## 4. Project Aim
+## 2. The legacy system
 
-The aim of this project is to refactor the legacy system using:
+The original version of OmniStore ([`legacy/OmniStoreManager.java`](legacy/OmniStoreManager.java)) was deliberately designed as a **monolithic legacy system**:
 
-- Object-Oriented Design Principles  
-- Creational Design Patterns  
-- Structural Design Patterns  
-- Behavioral Design Patterns  
+- A single class handles most of the system's functionality
+- Order processing, payment handling and inventory updates are tightly coupled
+- Business logic relies heavily on long `if/else` chains
 
-The goal is to improve:
+### Issues identified
 
-- Maintainability  
-- Flexibility  
-- Code readability  
-- Scalability  
-- Overall software quality  
-
----
-
-## 5. Design Patterns Implemented
-
-This project applies the following patterns:
-
-### Strategy Pattern
-Used to handle different discount strategies dynamically.
-
-### Factory Pattern
-Used to create different payment method objects without exposing instantiation logic.
-
-### Decorator Pattern
-Used to add optional features such as gift wrapping without modifying existing classes.
+- Tight coupling between components
+- Poor separation of concerns
+- Difficult to extend with new features
+- Violates key object-oriented design principles
+- Hard to maintain and scale
 
 ---
 
-## 6. GUI Implementation (JavaFX)
+## 3. Project aim
 
-The system includes a graphical user interface built using **JavaFX**.
+Refactor the legacy system using object-oriented design principles and creational, structural and behavioural design patterns, to improve:
 
-### Features:
-
-- Customer-friendly order interface  
-- Option to select discount (Strategy Pattern)  
-- Option to select payment method (Factory Pattern)  
-- Optional gift wrap feature (Decorator Pattern)  
-- Order confirmation popup messages  
-- Data stored in SQLite database  
-- Clean and user-friendly interface  
+- Maintainability
+- Flexibility
+- Code readability
+- Scalability
+- Overall software quality
 
 ---
 
-## 7. Database
+## 4. Design patterns implemented
 
-- SQLite database integration  
-- Orders are stored persistently  
-- Database operations handled separately from UI logic  
+| Pattern | Type | Used for |
+|---|---|---|
+| **Strategy** | Behavioural | Choosing a discount strategy at runtime (`BulkDiscount`, `NoDiscount`) |
+| **Factory** | Creational | Creating payment method objects without exposing how they are built |
+| **Decorator** | Structural | Adding optional features such as gift wrapping without changing existing classes |
+
+### Refactored class diagram
+
+![Refactored class diagram](docs/uml/refactored-class-diagram.svg)
 
 ---
 
+## 5. GUI (JavaFX)
+
+- Customer-friendly order interface
+- Choice of discount (Strategy pattern)
+- Choice of payment method (Factory pattern)
+- Optional gift wrap (Decorator pattern)
+- Order confirmation pop-up messages
+- Orders saved to an SQLite database
+
 ---
 
-## 8. UML Modelling
+## 6. Database
 
-- UML diagrams were created to support architectural analysis and demonstrate the transformation from the legacy system to the refactored design.
+- SQLite database integration; orders are stored persistently
+- Database operations are kept separate from the UI logic
+- The database file (`oministore.db`) is created automatically the first time the app runs
 
-### Legacy System UML
+![Saved orders in the database](docs/screenshots/database-orders.png)
 
-- Class Diagram – Shows the monolithic structure where all responsibilities are centralised within a single OmniStoreManager class.
-- Sequence Diagram – Demonstrates how order processing, discount calculation, payment handling, and notification logic are executed internally within one class using conditional branching.
+---
 
-- These diagrams highlight tight coupling, lack of abstraction, and poor separation of concerns in the original implementation.
+## 7. UML modelling
 
-### Refactored System UML
+UML diagrams support the architectural analysis and show the transformation from the legacy system to the refactored design.
 
-- Class Diagram – Shows modular package organisation (discount, order, payment, database) and the introduction of interfaces and abstraction.
-- Sequence Diagram – Illustrates runtime collaboration between Strategy, Decorator, Factory, and Database components.
+### Legacy system
 
-- The UML comparison clearly visualises the architectural evolution from a monolithic system to a modular, loosely coupled, pattern-driven design.
-## 9. Unit Testing
+- [Class diagram](docs/uml/legacy-class-diagram.svg): the monolithic structure, with all responsibilities centralised in a single `OmniStoreManager` class
+- [Sequence diagram](docs/uml/legacy-sequence-diagram.svg): order processing, discount calculation, payment handling and notification all run inside one class using conditional branching
 
-The project includes **JUnit 5 unit testing** to validate core business logic independently of the GUI and database layers.
+These diagrams highlight the tight coupling, lack of abstraction and poor separation of concerns in the original implementation.
 
-### Testing Focus
+### Refactored system
 
-- The `BulkDiscount` strategy implementation is tested.
-- Boundary conditions are verified:
-  - Discount applied when total > 2000
-  - No discount applied when total ≤ 2000
+- [Class diagram](docs/uml/refactored-class-diagram.svg): modular packages (`discount`, `order`, `payment`, `database`) with interfaces and abstraction
+- [Sequence diagram](docs/uml/refactored-sequence-diagram.svg): runtime collaboration between the Strategy, Decorator, Factory and database components
+- [UI class diagram](docs/uml/ui-class-diagram.svg) and [UI sequence diagram](docs/uml/ui-sequence-diagram.svg)
 
-### Why This Matters
+Comparing the two sets shows the architectural shift from a monolithic system to a modular, loosely coupled, pattern-driven design.
 
-The use of the Strategy pattern enables independent testing of discount logic due to interface-based abstraction and loose coupling.  
-This demonstrates improved testability and modularity in the refactored architecture.
+---
 
-## 10. Running the Project
+## 8. Unit testing
 
-- In the root project folder where pom.xml is 
-  Run this command:
- mvn clean javafx:run
+**JUnit 5** tests validate the core business logic independently of the GUI and database layers ([`BulkDiscountTest`](src/test/java/refactored/discount/BulkDiscountTest.java)).
 
-## 11. Technologies Used
+Boundary conditions tested:
 
-- Java
-- JavaFX
-- Maven
-- SQLite
+- Discount applied when the total is above 2000
+- No discount when the total is exactly 2000 or below
+- `NoDiscount` leaves the total unchanged
 
-## 12. Learning Outcomes
+Because discounts sit behind the `DiscountStrategy` interface, each strategy can be tested on its own, which shows the improved testability of the refactored design.
+
+---
+
+## 9. Running the project
+
+Requirements: **Java 21** and **Maven**.
+
+From the project folder (where `pom.xml` is):
+
+```bash
+# Run the app
+mvn clean javafx:run
+
+# Run the unit tests
+mvn test
+```
+
+---
+
+## 10. Project structure
+
+```
+src/main/java/refactored/
+├── Main.java        # JavaFX interface and entry point
+├── database/        # SQLite connection and setup
+├── discount/        # Strategy pattern
+├── order/           # Decorator pattern
+└── payment/         # Factory pattern
+src/test/java/       # JUnit 5 tests
+legacy/              # Original monolithic system
+docs/uml/            # UML diagrams
+```
+
+---
+
+## 11. Learning outcomes
 
 - Refactoring legacy systems
 - Applying object-oriented principles
-- Implementing Creational, Structural, and Behavioral design patterns
-- Separating concerns between UI, business logic, and data layer
-- Building desktop applications using JavaFX
+- Implementing creational, structural and behavioural design patterns
+- Separating concerns between the UI, business logic and data layer
+- Building desktop applications with JavaFX
+
+## Author
+
+**Aniqa Arooj**, MSc Artificial Intelligence, University of Greater Manchester
